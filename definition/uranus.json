@@ -1,0 +1,74 @@
+{
+  "port": 4552,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 7,
+                "name": "Uranus",
+                "type": "exterior",
+                "equatorial_radius": {
+                  "value": "25560",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "8,686 10^25",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "72,56 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "1,29",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": [
+                  "Cordelia",
+                  "Ofelia",
+                  "Bianca",
+                  "Cresida",
+                  "Desdemona",
+                  "Julieta",
+                  "Porcia",
+                  "Rosalinda",
+                  "Belinda",
+                  "Moon 1986U10",
+                  "Puck",
+                  "Miranda",
+                  "Ariel",
+                  "Umbriel",
+                  "Titania",
+                  "Oberon",
+                  "Calibano",
+                  "Moon 1999U1",
+                  "Sycorax",
+                  "Moon 1999U2"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/uranus",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+name: "Imposters CI"
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  initial:
+    name: 'Initial job placeholder'
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        ctx: [
+          { env: dev, other: something },
+          { env: qa, other: something },
+          { env: stage, other: something }
+        ]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: 'Listing repository contents'
+        run: 'ls -lia'
+      - name: "Matrix template"
+        run: "echo ${{ matrix.ctx.env }}"

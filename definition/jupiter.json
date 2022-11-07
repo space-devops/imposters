@@ -1,0 +1,71 @@
+{
+  "port": 4550,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 5,
+                "name": "Jupiter",
+                "type": "exterior",
+                "equatorial_radius": {
+                  "value": "71492",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "1,9 10^27",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "1425,23 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "1,33",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": [
+                  "Halo",
+                  "Metis",
+                  "Adrastea",
+                  "Amaltea",
+                  "Tebe",
+                  "Io",
+                  "Europa",
+                  "Ganimedes",
+                  "Calisto",
+                  "Leda",
+                  "Himalia",
+                  "Lisitera",
+                  "Elara",
+                  "Ananke",
+                  "Carme",
+                  "Pasifae",
+                  "Sinope"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/jupiter",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

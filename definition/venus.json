@@ -1,0 +1,53 @@
+{
+  "port": 4547,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 2,
+                "name": "Venus",
+                "type": "interior",
+                "equatorial_radius": {
+                  "value": "6052",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "4,90 10^24",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "0.95 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "5,25",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": []
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/venus",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

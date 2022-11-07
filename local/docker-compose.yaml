@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  mountebank:
+    image: "bbyars/mountebank:2.8.1"
+    ports:
+      - "2525:2525"
+      - "4545-4560:4545-4560"
+    command:
+      - "start"
+    networks:
+      - imposters
+
+networks:
+  imposters:

@@ -1,0 +1,78 @@
+{
+  "port": 4545,
+  "protocol": "http",
+  "defaultResponse": {
+    "statusCode": "400",
+    "body": {
+      "message": "Resource not found"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planets": [
+                {
+                  "id": 1,
+                  "name": "Mercury"
+                },
+                {
+                  "id": 2,
+                  "name": "Venus"
+                },
+                {
+                  "id": 3,
+                  "name": "Earth"
+                },
+                {
+                  "id": 4,
+                  "name": "Mars"
+                },
+                {
+                  "id": 5,
+                  "name": "Jupiter"
+                },
+                {
+                  "id": 6,
+                  "name": "Saturn"
+                },
+                {
+                  "id": 7,
+                  "name": "Uranus"
+                },
+                {
+                  "id": 8,
+                  "name": "Neptune"
+                },
+                {
+                  "id": 9,
+                  "name": "Pluto"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planets",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
