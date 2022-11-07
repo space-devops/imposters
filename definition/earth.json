@@ -1,0 +1,55 @@
+{
+  "port": 4548,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 3,
+                "name": "Earth",
+                "type": "interior",
+                "equatorial_radius": {
+                  "value": "6378",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "5,9742 10^24",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "1,083 10^12",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "5,5",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": [
+                  "Moon"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/earth",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

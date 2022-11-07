@@ -1,0 +1,52 @@
+{
+  "port": 4554,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 9,
+                "name": "Pluto",
+                "type": "exterior",
+                "equatorial_radius": {
+                  "value": "1137",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "1,27 10^22",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "0,11 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "1",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": []
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/pluto",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

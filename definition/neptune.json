@@ -1,0 +1,62 @@
+{
+  "port": 4553,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 8,
+                "name": "Neptune",
+                "type": "exterior",
+                "equatorial_radius": {
+                  "value": "24746",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "1024 10^26",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "61,73 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "1,64",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": [
+                  "Nayade",
+                  "Thalassa",
+                  "Despina",
+                  "Galatea",
+                  "Larisa",
+                  "Proteo",
+                  "Triton",
+                  "Nereida"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/neptune",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "port": 4551,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 6,
+                "name": "Saturn",
+                "type": "exterior",
+                "equatorial_radius": {
+                  "value": "60258",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "5,688 10^26",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "817,67 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "0,69",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": [
+                  "Pan",
+                  "Atlas",
+                  "Pandora",
+                  "Prometheus",
+                  "Epimeteo",
+                  "Jano",
+                  "Mimas",
+                  "Encelado",
+                  "Tetis",
+                  "Telesto",
+                  "Calipso",
+                  "Dione",
+                  "Helena",
+                  "Rea",
+                  "Titan",
+                  "Hyperion",
+                  "Japeto",
+                  "Febe"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/saturn",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

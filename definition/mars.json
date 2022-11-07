@@ -1,0 +1,56 @@
+{
+  "port": 4549,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 4,
+                "name": "Mars",
+                "type": "interior",
+                "equatorial_radius": {
+                  "value": "3397",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "6,42 10^23",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "0,16 10^27",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "3,94",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": [
+                  "Phobos",
+                  "Deimos"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/mars",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

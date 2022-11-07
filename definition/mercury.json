@@ -1,0 +1,53 @@
+{
+  "port": 4546,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "planet": {
+                "id": 1,
+                "name": "Mercury",
+                "type": "interior",
+                "equatorial_radius": {
+                  "value": "2439,7",
+                  "metric_unit": "km"
+                },
+                "mass": {
+                  "value": "3,3 10^23",
+                  "metric_unit": "kg"
+                },
+                "volume": {
+                  "value": "0,07 10^23",
+                  "metric_unit": "cm3"
+                },
+                "density": {
+                  "value": "5,43",
+                  "metric_unit": "g/cm3"
+                },
+                "satellites": []
+              }
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "equals": {
+            "method": "GET",
+            "path": "/v1/planet/mercury",
+            "headers": {
+              "Accept": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
