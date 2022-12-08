@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   mountebank:
+    container_name: mountebank
     image: "bbyars/mountebank:2.8.1"
     ports:
       - "2525:2525"
@@ -10,5 +11,14 @@ services:
     networks:
       - imposters
 
+  sidecar-init:
+    container_name: sidecar-init
+    build:
+      dockerfile: Dockerfile
+    networks:
+      - imposters
+
 networks:
   imposters:
+    name: imposters
+    external: true
