@@ -2,6 +2,10 @@ name: "Mountebank Imposters CI"
 
 on:
   push:
+    tags:
+      - release/*
+      - uat/*
+      - stable/*
     branches:
       - main
 
