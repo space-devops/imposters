@@ -1,9 +1,9 @@
-name: "Mountebank Imposters Dev"
+name: "Mountebank Imposters UAT"
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - uat/*
 
 env:
   REGISTRY_HUB_NAMESPACE: ${{ secrets.DOCKER_HUB_NAMESPACE }}
@@ -25,6 +25,8 @@ jobs:
             ${{ env.REGISTRY_HUB_NAMESPACE }}/${{ env.REGISTRY_IMAGE_NAME }}
           tags: |
             type=ref,event=branch
+            type=ref,event=pr
+            type=match, pattern=uat/v(\d.\d.\d), group=1
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -37,5 +39,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}-uat
           labels: ${{ steps.meta.outputs.labels }}
