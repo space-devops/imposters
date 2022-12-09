@@ -1,15 +1,17 @@
 name: "Mountebank Imposters CI"
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 env:
   REGISTRY_HUB_NAMESPACE: ${{ secrets.DOCKER_HUB_NAMESPACE }}
   REGISTRY_IMAGE_NAME: mountebank-imposters
 
 jobs:
-  integration:
-    name: 'Build Docker Image'
+  deployment:
+    name: 'Build and Publish Docker Image'
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Repository
@@ -37,6 +39,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          push: false
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
