@@ -1,9 +1,9 @@
 #!/bin/sh
 
-#until ping -c 1 mountebank-svc.mountebank; do
-#  echo "Waiting for mountebank server to be ready...."
-#  sleep 2
-#done
+until ping -c 1 mountebank-svc; do
+  echo "Waiting for mountebank server to be ready...."
+  sleep 2
+done
 
 
 for filename in definition/*.json; do
