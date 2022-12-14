@@ -13,8 +13,7 @@ services:
 
   sidecar-init:
     container_name: sidecar-init
-    build:
-      dockerfile: Dockerfile
+    image: dockvalkyrie/mountebank-imposters:0.7.1
     networks:
       - imposters
 
