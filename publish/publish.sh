@@ -1,6 +1,6 @@
 #!/bin/sh
 
-until ping -c 1 mountebank-svc; do
+until curl -I mountebank-svc; do
   echo "Waiting for mountebank server to be ready...."
   sleep 2
 done
