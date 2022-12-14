@@ -1,12 +1,12 @@
 #!/bin/sh
 
-until ping -c 1 mountebank-svc.mountebank; do
-  echo "Waiting for mountebank server to be ready...."
-  sleep 2
-done
+#until ping -c 1 mountebank-svc.mountebank; do
+#  echo "Waiting for mountebank server to be ready...."
+#  sleep 2
+#done
 
 
 for filename in definition/*.json; do
   printf "Loading %s.json\n" $(basename "$filename" .json)
-  curl -X POST -H "Content-Type: application/json" -d @definition/$(basename "$filename" .json).json http://mountebank-svc.mountebank:2525/imposters
+  curl -X POST -H "Content-Type: application/json" -d @definition/$(basename "$filename" .json).json http://mountebank-svc:2525/imposters
 done
