@@ -1,10 +1,7 @@
 #!/bin/sh
 
-until ping -c 1 mountebank-svc; do
-  echo "Waiting for mountebank server to be ready...."
-  sleep 2
-done
-
+echo "Sleeping for 30 seconds"
+sleep 30
 
 for filename in definition/*.json; do
   printf "Loading %s.json\n" $(basename "$filename" .json)
